@@ -1,3 +1,38 @@
+3# UI Garden - React Component Library
+This is a React-based UI component library.
+
+### Project Setup
+
+## Step 1: Create a React App and Storybook steup
+
+I created a react app using the commond npx create-react-app ui-garden --template typescript and then i initialized the storybook with npx sb init
+
+## Step 2: Dependecies required for the project
+
+npx sb init
+npm install @storybook/react --save-dev
+npm install styled-components @types/styled-components --save
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+
+## Step 3: Created quality checks for code
+
+npm install prettier, ESLint
+ensure all test passes before code is commited
+
+## Step 4: Pre-Commit Hook Setup
+Husky is set up to run these checks on every commit automatically. If any checks fail, the commit will be blocked until the issues are resolved.
+The configuration files for Prettier, ESLint, and testing are already set up in the project. 
+
+## Step 5: Build docker Image
+
+I build the docker image by running this command docker build -t kaur_khushleen_coding_assignment13 .
+
+## Step 6: Docker Container
+
+I made the docker container and port them on 8018 port using docker run -p 8018:80 --name kaur_khushleen_ui_garden kaur_khushleen_coding_assignment13
+
+We can run the project by visting http://localhost:8018.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
