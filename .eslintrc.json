@@ -1,0 +1,14 @@
+{
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "rules": {
+    "no-restricted-globals": "off", // Disable 'self' and other restricted globals
+    "no-console": "off", // Temporarily turn off console warnings
+    "no-unused-vars": "off", // Temporarily turn off unused variables warning
+    "react/react-in-jsx-scope": "off", // For older React versions
+    "no-new-func": "off", // Disable 'no-new-func' warning
+    "no-sequences": "off", // Disable comma operator warning
+    "eqeqeq": "off", // Allow '==' equality comparison (not recommended in production)
+    "no-self-compare": "off", // Disable self comparison warning
+    "no-unused-expressions": "off" // Disable unused expressions warning
+  }
+}

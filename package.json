@@ -2,18 +2,26 @@
   "name": "my-component-library",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
+  "lint-staged": {
+    "*.ts?(x)": [
+      "prettier --write",
+      "eslint --fix",
+      "npm test"
+    ]
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.11",
     "@types/react-dom": "^19.0.4",
+    "@types/styled-components": "^5.1.34",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^6.1.15",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -21,12 +29,24 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky install",
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "husky": "husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "prettier --write . && git add -A ."
+    }
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -40,5 +60,29 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.8",
+    "@storybook/addon-interactions": "^8.5.8",
+    "@storybook/addon-mdx-gfm": "^8.5.8",
+    "@storybook/addon-onboarding": "^8.5.8",
+    "@storybook/blocks": "^8.5.8",
+    "@storybook/preset-create-react-app": "^8.5.8",
+    "@storybook/react": "^8.5.8",
+    "@storybook/react-webpack5": "^8.5.8",
+    "@storybook/test": "^8.5.8",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-storybook": "^0.11.5",
+    "husky": "^8.0.3",
+    "prettier": "^3.5.3",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.5.8",
+    "webpack": "^5.98.0"
   }
 }
